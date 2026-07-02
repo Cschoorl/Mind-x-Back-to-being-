@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
     --canvas:#FFFEF1; --ink:#2A3723; --grass:#97A081; --sand:#B9A26E;
@@ -17,6 +17,7 @@
     --sans:'Inter', system-ui, sans-serif;
     --pad: clamp(40px, 8vw, 150px);
     --maxw: 900px;
+    --mind-paper:#FFFFFF; --mind-ink:#111111; --mind-orange:#EE6C1F; --mind-orange-light:#FFC93C; --mind-berry:#C23572;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html,body{height:100%;}
@@ -45,6 +46,19 @@
   .slide.dark .eyebrow{color:rgba(255,254,241,.6);}
   .slide.dark .lead{color:rgba(255,254,241,.8);}
   .slide.dark .lead .em{color:#fff;}
+
+  /* MIND brand interlude */
+  .slide.mind{background:var(--mind-paper); color:var(--mind-ink);}
+  .slide.mind .mark{color:var(--mind-ink);}
+  .slide.mind .mark span{color:rgba(17,17,17,.5);}
+  .slide.mind .eyebrow{color:rgba(17,17,17,.55); font-weight:700; text-transform:uppercase; letter-spacing:.08em;}
+  .slide.mind h2{font-family:var(--sans); font-weight:800; letter-spacing:-.02em; color:var(--mind-ink);}
+  .slide.mind .it{font-style:normal; color:var(--mind-orange);}
+  .slide.mind .lead{color:rgba(17,17,17,.72);}
+  .slide.mind .lead .em{color:var(--mind-ink); font-weight:700;}
+  .slide.mind .kicker{font-family:var(--sans); font-style:normal; font-weight:700; color:var(--mind-orange);}
+  .mind-logo{margin-bottom:clamp(18px,2.4vw,28px);}
+  .mind-logomark{width:clamp(120px,13vw,164px); height:auto; display:block;}
 
   .slide.cover{text-align:center;}
   .slide.cover .inner{max-width:800px;}
@@ -207,13 +221,37 @@
   </section>
 
   <!-- 4 · WAAROM MIND -->
-  <section class="slide dark">
+  <section class="slide mind">
     <div class="mark"><svg viewBox="0 0 970.79 511.74"><use href="#logomark"/></svg><span>back to being</span></div>
     <div class="inner reveal">
+      <div class="mind-logo">
+        <svg class="mind-logomark" viewBox="0 0 220 170" role="img" aria-label="MIND logo">
+          <defs>
+            <linearGradient id="mindSplash" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFCE45"/>
+              <stop offset="55%" stop-color="#F5921E"/>
+              <stop offset="100%" stop-color="#EA5B14"/>
+            </linearGradient>
+            <filter id="mindInk" x="-80%" y="-80%" width="260%" height="260%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.024" numOctaves="3" seed="9" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="46"/>
+            </filter>
+            <filter id="mindInk2" x="-100%" y="-100%" width="300%" height="300%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n2"/>
+              <feDisplacementMap in="SourceGraphic" in2="n2" scale="30"/>
+            </filter>
+          </defs>
+          <ellipse cx="150" cy="55" rx="58" ry="52" fill="url(#mindSplash)" filter="url(#mindInk)"/>
+          <ellipse cx="95" cy="112" rx="46" ry="30" fill="url(#mindSplash)" opacity=".9" filter="url(#mindInk2)"/>
+          <path d="M40 145 C 20 150, 8 158, 2 168" stroke="#F5921E" stroke-width="5" stroke-linecap="round" fill="none" opacity=".8" filter="url(#mindInk2)"/>
+          <rect x="14" y="42" width="150" height="86" fill="none" stroke="#111" stroke-width="6"/>
+          <text x="26" y="98" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="42" letter-spacing="1" fill="#111">MIND</text>
+        </svg>
+      </div>
       <div class="eyebrow">Waarom MIND</div>
       <h2 class="xl">MIND is waar het echt om <span class="it">draait.</span></h2>
       <p class="lead">Stichting MIND is er al voor miljoenen jongeren met mentale klachten. We bouwen een app voor hen, zodat jongeren de stichting makkelijker vinden en er dagelijks naar teruggrijpen. <span class="em">Hoe meer ze 'm gebruiken, hoe verder de impact van MIND reikt.</span></p>
-      <div class="kicker" style="color:var(--sky)">De wandeling eindigt. De app gaat door.</div>
+      <div class="kicker">De wandeling eindigt. De app gaat door.</div>
     </div>
   </section>
 

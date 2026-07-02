@@ -1,6 +1,6 @@
-# Back to Being × MIND — Samenwerkingsvoorstel
+# Back to Being × MIND — Het verhaal
 
-Interactieve presentatie voor de samenwerking tussen Back to Being en stichting MIND.
+Interactieve verhaal-deck over Back to Being, gebouwd voor MIND. Bedoeld om door MIND doorgestuurd te worden naar hun eigen partners en sponsors.
 
 ## Bekijken
 
